@@ -1,0 +1,9 @@
+fastapi[standard]
+pydantic
+google-genai
+gspread
+asyncpg
+sqlalchemy
+pytest
+docker
+dotenv
