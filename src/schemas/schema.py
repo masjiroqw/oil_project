@@ -10,7 +10,7 @@ class StationType(str, Enum):
     
 class FuelReport(BaseModel):
     station_type: StationType
-    disiel: list[float]
+    diesel: list[float]
     fuel_92: list[float]
-    fuel_95: float
+    fuel_95: list[float]
     goal: float

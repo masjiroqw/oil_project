@@ -1,13 +1,14 @@
 
 from fastapi import FastAPI, HTTPException, UploadFile
 
+from prompts import GEMINI_PROMPT
+from src.services.api_service import ApiService
+
 app = FastAPI()
 
 
 
 @app.post("/upload")
 async def get_photo(file:UploadFile):
-    if file.content_type not in ALLOWED_TYPES:
-        raise HTTPException(status_code=400, detail="allowed only jpeg")
-    content = await file.read()
-    return content
+    service = ApiService(sys_prompt=GEMINI_PROMPT)
+    await service.process_api(file=file)
