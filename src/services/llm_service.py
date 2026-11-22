@@ -5,6 +5,8 @@ from google import genai
 from google.genai import types
 
 from logger_config import setup_logger
+from prompts import FINANCIAL_PROMPT, FUEL_PROMPT, INITIAL_PROMPT
+from src.schemas.schema import FinancialReport, FuelReport, ReportType
 
 logger = setup_logger()
 
